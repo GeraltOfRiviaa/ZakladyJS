@@ -1,0 +1,2 @@
+# ZakladyJS
+Základy JS
