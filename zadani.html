@@ -34,7 +34,15 @@
             </p>
           </blockquote>
           <div class="bg-info p-3">
-            <p>Zde bude řešení.</p>
+            <p>
+              <ul>
+                <li>JS je programovací jazyk,navzdory slovu Java v názvu není totožný s jazykem Java, ale používá podobnou syntaxu příkazů.</li>
+                <li>JS se používá k interakci na webu, neboli když přejedete přes tlačíko a ono změní barvu, či samotná akce po kliknutí je možná díky JS.</li>
+                <li>Podle webu <a href="https://www.statista.com/statistics/793628/worldwide-developer-survey-most-used-languages/">Statista</a> je JS nejpoužívanější programovací jazyk na světě: 
+                <li><a href="https://www.futurelearn.com/info/blog/what-is-javascript-used-for">Využití JS</a></li>
+                <li><a href="https://www.cmarix.com/blog/websites-that-use-javascript/">Nejznámější stránky používající JS</a></li>
+              </ul>
+            </p>
           </div>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -44,7 +52,19 @@
             <p class="text-warning">Použij angličtinu!</p>
           </blockquote>
           <div class="bg-info p-3">
-            <p>Zde bude řešení.</p>
+            <p>
+              <ol>
+                <li>JavaScript je case sensitive – tj. záleží na velikosti písmen</li>
+                <li>Příkazy musí být zakončeny středníkem, pokud je jich více na jednom řádku (zakončení
+                  středníkem je vhodné i u jednotlivých příkazů)</li>
+                <li>Blok příkazů je uvozen složenými závorkami - {...}</li>
+                <li>Komentáře v JS: 
+                  // jednořádkový komentář 
+                  /* víceřádkový komentář */</li>
+                <li>JavaScript nepoužívá normální proměné jako int, float atd. ale speciální proměné let a const. Rozdíl je v tom, že JavaScript dělá akorát rozdíl mezi proměnou, 
+                  která bude svou hodnotu měnit (let), a která nebude měnit hodnotu (const)</li>
+              </ol>
+            </p>
           </div>
         </div>
       </div>
@@ -60,8 +80,12 @@
           </blockquote>
           <div class="bg-light p-3">
             <code>
-              // 1. Vložit kód do tagu script<br />
-              &lt;script&gt;console.log('Hello');&lt;/script&gt;
+              1. Vložit kód do tagu script<br />
+              &lt;script&gt;console.log('Hello');&lt;/script&gt;<br />
+              2. Připojit externí soubor<br />
+              &lt;script type= 'text/javascript' src='soubor.js!&gt;&lt;&gt;/script;&gt;<br />
+              3. Vložit kód jako reakci na události<br />
+              &lt;button onclick="alert('Ahoj'); ">Klikni&lt;/button&gt;
             </code>
           </div>
         </div>
@@ -80,12 +104,12 @@
             <code>
               let x = 0; // s přiřazením hodnoty<br />
               let x; // bez přiřazení hodnoty<br />
-              let x = null; // ...<br />
-              ... // celé číslo (typ number)<br />
-              ... // reálné číslo (typ number)<br />
-              ... // zápis desetinného čísla pomocí exponentu<br />
-              ... // typ string<br />
-              let prestupny = false // ...<br />
+              let x = null; // nullová hodnota<br />
+              let x = 1 // celé číslo (typ number)<br />
+              let x = 1.5 // reálné číslo (typ number)<br />
+              let x = 165e-5 // zápis desetinného čísla pomocí exponentu<br />
+              let x = 'text' // typ string<br />
+              let prestupny = false // typ boolean<br />
             </code>
           </div>
         </div>
@@ -106,27 +130,27 @@
             <h4>Matematické</h4>
             <code>
               +, -, *, /, % (modulo - zbytek po celočíselném dělení), **
-              (umocnění)
+              (umocnění), ++ (+1), -- (-1)
             </code>
             <h4>Přiřazovací</h4>
             <code>
-              ...
+              =, +=, -=, *=, /=, %= (stejné jako x = x % 5), **= (stejné jako x = x ** 5) 
             </code>
             <h4>Logické</h4>
             <code>
-              ...
+              %% (a), || (nebo), ! (ne)
             </code>
             <h4>Porovnávací</h4>
             <code>
-              ...
+              ==, === (zkontroluje, jestli je stejná hodnota a operátor), !=, !== (nerovná se hodnota a typ), >, <, >=, <=, ?
             </code>
             <h4>Bitové</h4>
             <code>
-              ...
+              & (AND), | (OR), ~ (NOT), ^ (XOR), << (levý shift), >> (pravý shift), >>> (unsigned right shift)
             </code>
             <h4>Typové</h4>
             <code>
-              typeof (typ proměnné), instanceof (...)
+              typeof (typ proměnné), instanceof (objekt je instancí typu objekt)
             </code>
           </div>
         </div>
@@ -145,17 +169,17 @@
           <div class="bg-light text-danger p-3">
             <h4>alert()</h4>
             <code>
-              /* ... */<br />
+              /* Uživatel zadal špatně heslo */<br />
               alert('Nezadal jsi správné heslo!');
             </code>
             <h4>prompt()</h4>
             <code>
               /* Do proměnné password vloží heslo zadané uživatelem */<br />
-              ...
+              prompt(password);
             </code>
             <h4>confirm()</h4>
             <code>
-              /* ... */<br />
+              /* Uživatel zadal správné heslo */<br />
               if (confirm('Chceš přejít na stránky Seznam.cz?'))
               location.href='https://seznam.cz';
             </code>
@@ -194,7 +218,17 @@
             <p>Zde bude řešení.</p>
           </div>
           <script>
-          <!-- Zadejte JS kód -->
+          let jmeno = 'Samuel';
+          let prijmeni = 'Svoboda';
+          let vyska = '180 cm';
+          let vaha = '75';
+          let pozdrav = 'Dobré odpoledne, dobrý večer a dobrou noc ';
+          let vystup = '<p>'+ pozdrav + ', mé jméno je '+ jmeno + ' ' + prijmeni + '</p>'
+          vystup += '<p>' + 'Váha: '+ vaha + ' Výška: ' + vyska + '</p>'
+          vystup += '<p>' + 'Motto: "Dělej, protože musíš"' + '</p>'
+          const otazkaSedm = document.getElementById('sedmy');
+          otazkaSedm.innerHTML = vystup;
+          
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -216,7 +250,20 @@
             Oblast myších zájmů
           </div>
           <script>
-          <!-- Zadejte JS kód -->
+          let element = document.getElementById('osmy')
+          element.addEventListener('mouseenter', changeColor);
+          element.addEventListener('mouseleave', changeColor2);
+          
+          function changeColor(){
+            element.setAttribute('style', 'background-color:yellow ! important')
+            element.style.color = "red";
+            element.style.fontSize = '200%';
+          }
+          function changeColor2(){
+            element.setAttribute('style', 'background-color:#17a2b8 ! important')
+            element.style.color = "rgb(255,255,255)";
+            element.style.fontSize = '100%';
+          }
           </script>
         </div>
       </div>
@@ -246,7 +293,26 @@
             </button>
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            function sudeLiche(cislo){
+              
+              if (cislo % 2 == 0){
+                return 'Sudé'
+              }
+              else if (cislo == 0){
+                return 'Nula'
+              }
+              else(cislo % 2 != 0);{
+                return 'Liché'
+              }
+            }
+            
+
+            let click = document.querySelector('button');
+          click.onclick = () => {
+            let cislo = prompt("Zadej číslo");
+          console.log(sudeLiche(cislo));
+          }
+
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -268,10 +334,43 @@
             </ol>
           </blockquote>
           <div class="bg-light p-3">
-            <a href="">Vypiš den</a>
+            <a href="javascript:denVTydnu()">Vypiš den</a>
           </div>
           <script>
-           <!-- Zadejte JS kód -->
+          function denVTydnu() {
+          let datum = new Date().getDay();
+          
+          switch (datum){
+            
+            case 1: 
+            alert("Pondělí");
+            break;
+
+            case 2: 
+            alert("Úterý");
+            break;
+            
+            case 3: 
+            alert("Středa");
+            break;
+
+            case 4: 
+            alert("Čtvrtek");
+            break;
+            
+            case 5: 
+            alert("Pátek");
+            break;
+
+            case 6: 
+            alert("Sobota");
+            break;
+            
+            case 7: 
+            alert("Neděle");
+            break;
+          }
+        }
           </script>
         </div>
       </div>
@@ -287,7 +386,21 @@
           <div class="bg-info p-3" id="jedenacty">
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            function displayLeapYears(startYear, endYear) {
+              const leapYearsDiv = document.getElementById('jedenacty');
+              let leapYears = '';
+  
+              for (let a = startYear; a < endYear; a++) {
+                  if ((a % 4 === 0 && a % 100 !== 0) || (a % 400 === 0)) {
+                      leapYears += a + '<br>'; // Append the leap year with a line break
+                  }
+              }
+  
+              leapYearsDiv.innerHTML = leapYears; // Update the div with leap years
+          }
+  
+          // Call the function to display leap years from 1900 to 2000
+          displayLeapYears(1900, 2024);
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -300,7 +413,16 @@
           <div class="bg-info p-3" id="dvanacty">            
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            let cislo = Math.random() * 100 ;
+            Math.round(cislo);
+            if (cislo <= 3 ) cosole.log(cislo + 'je prvočíslo');
+            if (cislo % 2 == 0) cosole.log(cislo + 'není prvočíslo');;
+            if (cislo <= 1) cosole.log(cislo + 'není prvočíslo');;
+            for (let i = 3; i <= cislo; i += 2) {
+              if (cislo % i === 0) cosole.log(cislo + 'není prvočíslo');
+              
+          } 
+          console.log(cislo + 'je prvočíslo');
           </script>
         </div>
       </div>
@@ -316,7 +438,14 @@
           <div class="bg-info p-3" id="trinacty">
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            function vypisDatumCas() {
+              const d = new Date();
+              let datum = `${d.getDate()}. ${d.getMonth() + 1}. ${d.getFullYear()}`;
+              let cas = `${d.getHours()}:${d.getMinutes() > 9 ? d.getMinutes() : "0" + d.getMinutes()}`;
+              return datum + " " + cas;
+            }
+            console.log(vypisDatumCas());
+            document.getElementById("trinacty").innerText = vypisDatumCas();
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -330,13 +459,25 @@
             <img src="img/hrad.webp" class="img-fluid" alt="foto" id="foto">            
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            const imgList = ['img/hrad.webp', 'img/praha.jpg', 'img/staromak.jpg', 'img/vltava.jpg'];
+          const img = document.getElementById("foto");
+
+          function initImageSwitcher(imgEl, timeout, imgList) {
+            let i = 0;
+
+            setInterval(() => {
+              i = (i + 1) % imgList.length;
+              imgEl.src = imgList[i];
+            }, timeout);
+          }
+
+          initImageSwitcher(img, 3000, imgList);
           </script>
         </div>
       </div>      
     </main>
     <footer class="text-center mt-5">
-      Jméno Příjmení, třída IT2
+      Samuel Svoboda, třída IT2
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
