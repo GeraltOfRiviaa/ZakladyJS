@@ -54,15 +54,15 @@
           <div class="bg-info p-3">
             <p>
               <ol>
-                <li>JavaScript je case sensitive – tj. záleží na velikosti písmen</li>
-                <li>Příkazy musí být zakončeny středníkem, pokud je jich více na jednom řádku (zakončení
-                  středníkem je vhodné i u jednotlivých příkazů)</li>
-                <li>Blok příkazů je uvozen složenými závorkami - {...}</li>
-                <li>Komentáře v JS: 
-                  // jednořádkový komentář 
-                  /* víceřádkový komentář */</li>
-                <li>JavaScript nepoužívá normální proměné jako int, float atd. ale speciální proměné let a const. Rozdíl je v tom, že JavaScript dělá akorát rozdíl mezi proměnou, 
-                  která bude svou hodnotu měnit (let), a která nebude měnit hodnotu (const)</li>
+                <li>JavaScript is case sensitive - "This" is not the same as "this"</li>
+                <li>Commands must be terminated with a semicolon if there are multiple commands on one line (termination
+                  semicolon is also appropriate for single commands)</li>
+                <li>The block of commands is enclosed in parentheses - {...}</li>
+                <li>Comments in JS: 
+                  // one-line comment 
+                  /* multi-line comment */</li>
+                <li>JavaScript doesn't use normal variables like int, float, etc. but special variables like let and const. The difference is that JavaScript only makes a difference between the variable, 
+                  that will change its value (let) and that will not change its value (const)</li>
               </ol>
             </p>
           </div>
@@ -86,6 +86,7 @@
               &lt;script type= 'text/javascript' src='soubor.js!&gt;&lt;&gt;/script;&gt;<br />
               3. Vložit kód jako reakci na události<br />
               &lt;button onclick="alert('Ahoj'); ">Klikni&lt;/button&gt;
+              
             </code>
           </div>
         </div>
@@ -175,17 +176,17 @@
             <h4>prompt()</h4>
             <code>
               /* Do proměnné password vloží heslo zadané uživatelem */<br />
-              prompt(password);
+              let password = prompt(Zadej heslo);
             </code>
             <h4>confirm()</h4>
             <code>
-              /* Uživatel zadal správné heslo */<br />
+              /* Popup okno se uživatele zeptá, zda chce na stránky seznamu */<br />
               if (confirm('Chceš přejít na stránky Seznam.cz?'))
               location.href='https://seznam.cz';
             </code>
             <hr />
             <p class="alert alert-primary" role="alert">
-              Varování:
+              Varování: Při použití popup oken nemůže uživatel na stránce dělat nic, dokud se popup okno nezavře
             </p>
           </div>
         </div>
@@ -386,21 +387,25 @@
           <div class="bg-info p-3" id="jedenacty">
           </div>
           <script>
-            function displayLeapYears(startYear, endYear) {
-              const leapYearsDiv = document.getElementById('jedenacty');
-              let leapYears = '';
-  
-              for (let a = startYear; a < endYear; a++) {
-                  if ((a % 4 === 0 && a % 100 !== 0) || (a % 400 === 0)) {
-                      leapYears += a + '<br>'; // Append the leap year with a line break
-                  }
+            const solutionBlock11 = document.getElementById("jedenacty");
+            const startYear = 1900;
+            const endYear = 2024;
+
+            function leapYearList(startYear, endYear) {
+              const yearList = document.createElement("ul");
+              
+              for (let i = startYear; i <= endYear; i++) {
+                if (i % 400 === 0 || i % 4 === 0 && i % 100 !== 0) {
+                  const li = document.createElement("li");
+                  li.textContent = i;
+                  yearList.append(li);
+                }
               }
-  
-              leapYearsDiv.innerHTML = leapYears; // Update the div with leap years
-          }
-  
-          // Call the function to display leap years from 1900 to 2000
-          displayLeapYears(1900, 2024);
+              
+              return yearList;
+            }
+
+            solutionBlock11.append(leapYearList(startYear, endYear));
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -413,16 +418,22 @@
           <div class="bg-info p-3" id="dvanacty">            
           </div>
           <script>
-            let cislo = Math.random() * 100 ;
-            Math.round(cislo);
-            if (cislo <= 3 ) cosole.log(cislo + 'je prvočíslo');
-            if (cislo % 2 == 0) cosole.log(cislo + 'není prvočíslo');;
-            if (cislo <= 1) cosole.log(cislo + 'není prvočíslo');;
-            for (let i = 3; i <= cislo; i += 2) {
-              if (cislo % i === 0) cosole.log(cislo + 'není prvočíslo');
+            const blok = document.getElementById("dvanacty");
+            let randomNumber = Math.floor(Math.random() * 100) + 2; 
+            
+            function prvocislo(cislo) {
+              let i = 2;
+              while (i < cislo / 2) {
+                if (cislo % i === 0)
+                  return false;
+                i++;
+              }
               
-          } 
-          console.log(cislo + 'je prvočíslo');
+              return true;
+            }
+
+            console.log(`Číslo ${randomNumber} ${prvocislo(randomNumber) ? "je" : "není"} prvočíslo.`) 
+          
           </script>
         </div>
       </div>
