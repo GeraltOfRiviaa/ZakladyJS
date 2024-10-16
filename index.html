@@ -415,7 +415,8 @@
               Vytvořte v JS funkci, která zjistí, zda náhodně zadané číslo je prvočíslem:
             </p>
           </blockquote>
-          <div class="bg-info p-3" id="dvanacty">            
+          <div class="bg-info p-3" id="dvanacty">   
+            <p>Výsledek v konzoli</p>
           </div>
           <script>
             const blok = document.getElementById("dvanacty");
@@ -432,7 +433,7 @@
               return true;
             }
 
-            console.log(`Číslo ${randomNumber} ${prvocislo(randomNumber) ? "je" : "není"} prvočíslo.`) 
+            blok.innerHTML = (`Číslo ${randomNumber} ${prvocislo(randomNumber) ? "je" : "není"} prvočíslo.`) 
           
           </script>
         </div>
